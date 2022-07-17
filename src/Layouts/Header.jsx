@@ -11,7 +11,7 @@ function Header() {
                 <img src={Catflix} alt="Catflix" />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Header;
