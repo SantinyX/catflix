@@ -1,0 +1,9 @@
+.containerHeader {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(43, 41, 41);    
+}
+
+.imgCats {
+    opacity: 0.8;
+}
