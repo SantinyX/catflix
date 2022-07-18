@@ -15,9 +15,13 @@ function Index() {
         <div>
             <Header />
             <div className={Style.index}>
-                <h2 className={Style.h2}>Filmes Populares</h2>
-                <Cards />
+
+                <div className={Style.h2}><h2>Filmes Populares</h2></div>
+
+                <div className={Style.Cards}><Cards /></div>
+
             </div>
+            
             <strong><Footer /></strong>
         </div>
     )

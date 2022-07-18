@@ -1,10 +1,15 @@
 .index {
     display: flex;    
     background-color: bisque;
-    flex-direction: column;
+    flex-direction: column;   
 }
 
 .h2 {
     display: flex;
     justify-content: center;
+}
+
+.Cards {
+    display: flex;
+    justify-content: center;    
 }
