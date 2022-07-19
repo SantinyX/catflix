@@ -1,21 +1,22 @@
 import React from "react";
-import { Cards } from "../Layouts/Cards";
-import Footer from "../Layouts/Footer";
 import Header from "../Layouts/Header";
+import Style from "./Index.module.css"
 
+function Index () {
 
-function Index() {    
+    return(
+        <div className="Container">
+            <Header/>
+            <div className={Style.bodyCards}>
+                <h1>Filmes Populares</h1>
+                <div className={Style.cards}>
+                    
+                    
 
-    return (
-        <div >
-            <Header />
-            <div >
-                <h2>Filmes Populares</h2>
-                <ul>                    
-                    <li><Cards /></li>
-                </ul>
+                </div>
+
             </div>
-            <strong><Footer /></strong>
+
         </div>
     )
 }
