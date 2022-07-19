@@ -1,0 +1,9 @@
+.ulContainer{
+    display: flex;
+    gap: 50px;
+}
+.imageMovie {
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 10px;
+}
