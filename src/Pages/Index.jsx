@@ -1,50 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { catchFilms } from "../assets/Api/Api";
 import Footer from "../Layouts/Footer";
 import Header from "../Layouts/Header";
-import Style from "./Index.module.css";
+import { Body, MovieCard, Title } from "./IndexStyle";
+
 
 
 
 function Index() {
 
+    const [films, setFilms] = useState([]);
+    const image_path = 'https://image.tmdb.org/t/p/w500/'
+
+    useEffect(() => {
+        catchFilms(setFilms);
+    }, []);
+
     return (
-        <div className={Style.body}>
-            <div className={Style.Header}>
+        <Body>
+            <div className="Header">
                 <Header />
             </div>
-            <div className={Style.container}>
+            <div className="container">
                 <div>
 
-                    <h1>Filmes Populares</h1>
+                    <Title>Filmes Populares</Title>
 
-                    <div className={Style.movies_container}>
-                        <ul>
-                            
-                            <li>
-                                <a href="https://www.youtube.com/results?search_query=display+flex"><img  alt="teste" className={Style.imgStyle} src="https://thenexus.one/storage/2022/03/Resident-Evil-Netflix-Series-connected-to-the-games-Claire.jpg" /></a>
-                                <span></span>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/results?search_query=display+flex"><img alt="teste" className={Style.imgStyle} src="https://thenexus.one/storage/2022/03/Resident-Evil-Netflix-Series-connected-to-the-games-Claire.jpg" /></a>
-                                <span>Teste</span>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/results?search_query=display+flex"><img alt="teste" className={Style.imgStyle} src="https://thenexus.one/storage/2022/03/Resident-Evil-Netflix-Series-connected-to-the-games-Claire.jpg" /></a>
-                                <span>Teste</span>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/results?search_query=display+flex"><img alt="teste" className={Style.imgStyle} src="https://thenexus.one/storage/2022/03/Resident-Evil-Netflix-Series-connected-to-the-games-Claire.jpg" /></a>
-                                <span>Teste</span>
-                            </li>
-                            
-                                                       
-                        </ul>
-
-                    </div>
+                    <MovieCard>
+                        {!films ? "loading" : <>
+                            {films.map((films) => {
+                                return (
+                                    <ul>
+                                        <li>
+                                            <a href="google.com"><img alt="Films" src={`${image_path}${films.poster_path}`} /></a>
+                                            <span>{films.title}</span>
+                                        </li>
+                                    </ul>
+                                )
+                            })}
+                        </>}
+                    </MovieCard>
                 </div>
             </div>
             <Footer />
-        </div>
+        </Body>
     )
 }
 

@@ -1,12 +1,13 @@
 import React from "react";
-import Style from "../Layouts/Footer.module.css"
+import { FooterStyle } from "./FooterHeaderStyle";
+
 
 function Footer() {
     return (
-        <div className={Style.footer}>
+        <FooterStyle>
             <p>CATFLIX® 2022, All rights reserve.</p>
             <p>Created by Diego Santiny</p>
-        </div >
+        </FooterStyle>
     )
 }
 
