@@ -19,6 +19,7 @@ export const MovieCard = styled.div`
     column-gap: 3rem;
     row-gap: 3rem;
     margin-right: 30px;  
+    padding-bottom: 100px;
 
     p {
       color: brown;
