@@ -7,6 +7,7 @@ import { Body, MovieCard, Title } from "./IndexStyle";
 
 
 
+
 function Index() {
 
     const [films, setFilms] = useState([]);
@@ -14,7 +15,7 @@ function Index() {
 
     useEffect(() => {
         catchFilms(setFilms);
-    }, []);
+    },[]);
 
     return (
         <Body>
@@ -22,17 +23,21 @@ function Index() {
                 <Header />
             </div>
             <div className="container">
+            
                 <div>
+                
 
                     <Title>Filmes Populares</Title>
 
                     <MovieCard>
+                    
                         {!films ? "loading" : <>
                             {films.map((films) => {
                                 return (
                                     <ul>
                                         <li>
                                             <a href="google.com"><img alt="Films" src={`${image_path}${films.poster_path}`} /></a>
+                                            <p>{films.vote_average}</p>
                                             <span>{films.title}</span>
                                         </li>
                                     </ul>

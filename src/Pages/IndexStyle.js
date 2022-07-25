@@ -18,9 +18,12 @@ export const MovieCard = styled.div`
     grid-template-columns: repeat( auto-fit, minmax(220px, 1fr));
     column-gap: 3rem;
     row-gap: 3rem;
-    margin-right: 30px;
-    
-    
+    margin-right: 30px;  
+
+    p {
+      color: brown;
+      font-weight: bold;
+    }    
 
    li {
     background-color: rgb(233, 223, 223);
@@ -39,7 +42,7 @@ export const MovieCard = styled.div`
     width: 180px;
     height: 250px;
     border-radius: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     }
 
     span {
