@@ -3,22 +3,21 @@ import styled from "styled-components";
 export const HeaderStyle = styled.div `    
     display: flex;
     justify-content: center;
-    max-height: 600px;
-        
+    max-height: 600px;        
 
     .imgBack {
      background-size: cover;
      background-repeat: no-repeat ;
-
+     height: 100%;
+     width: 100%;
     }
 
     .imgCatflix {
         background-size: cover;
         overflow: auto;
         position: absolute;
-        padding: 100px;
-        justify-content: center;
-        
+        padding: 250px;
+        justify-content: center;      
 
     }
 

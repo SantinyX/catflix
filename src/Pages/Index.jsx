@@ -5,9 +5,6 @@ import Header from "../Layouts/Header";
 import { Body, MovieCard, Title } from "./IndexStyle";
 
 
-
-
-
 function Index() {
 
     const [films, setFilms] = useState([]);
@@ -24,8 +21,7 @@ function Index() {
             </div>
             <div className="container">
             
-                <div>
-                
+                <div>              
 
                     <Title>Filmes Populares</Title>
 
