@@ -5,7 +5,7 @@ import Header from "../Layouts/Header";
 import { Body, MovieCard, Title } from "./IndexStyle";
 
 
-function Index() {
+function Home() {
 
     const [films, setFilms] = useState([]);
     const image_path = 'https://image.tmdb.org/t/p/w500/'
@@ -48,7 +48,7 @@ function Index() {
     )
 }
 
-export default Index;
+export default Home;
 
 // import { useEffect, useState } from "react"
 // import { catchFilms } from "../assets/Api/Api";
