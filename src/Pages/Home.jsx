@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { catchFilms } from "../assets/Api/Api";
 import Footer from "../Layouts/Footer";
 import Header from "../Layouts/Header";
-import { Body, MovieCard, Title } from "./IndexStyle";
-
+import { Body, ContainerMovie, MovieCard, Title } from "./IndexStyle";
+import imgHeader from "../assets/Imgs/1241167.png"
 
 function Home() {
 
@@ -12,41 +12,43 @@ function Home() {
 
     useEffect(() => {
         catchFilms(setFilms);
-    },[]);
+    }, []);
 
     return (
         <Body>
             <div className="Header">
                 <Header />
+                <img className="imgBack" alt="Thor Love and" src={imgHeader} />
             </div>
-            <div className="container">
-            
-                <div>              
 
-                    <Title>Filmes Populares</Title>
+            <div>                
 
-                    <MovieCard>
-                    
-                        {!films ? "loading" : <>
-                            {films.map((films) => {
-                                return (
-                                    <ul>
-                                        <li>
-                                            <a href="google.com"><img alt="Films" src={`${image_path}${films.poster_path}`} /></a>
-                                            <p>{films.vote_average}</p>
-                                            <span>{films.title}</span>
-                                        </li>
-                                    </ul>
-                                )
-                            })}
-                        </>}
-                    </MovieCard>
-                </div>
+                <Title>Filmes Populares</Title>
+
+                <MovieCard>
+
+                    {!films ? "loading" : <>
+                        {films.map((films) => {
+                            return (
+                                <ul>
+                                    <li>
+                                        <a href="google.com"><img alt="Films" src={`${image_path}${films.poster_path}`} /></a>
+                                        <p>{films.vote_average}</p>
+                                        <span>{films.title}</span>
+                                    </li>
+                                </ul>
+                            )
+                        })}
+                    </>}
+                </MovieCard>
+
+                <Footer />
+
             </div>
-            <Footer />
+
         </Body>
     )
-}
+};
 
 export default Home;
 

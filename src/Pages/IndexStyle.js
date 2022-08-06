@@ -3,14 +3,23 @@ import styled from "styled-components";
 export const Body = styled.div`      
   flex-direction: column;
   margin: auto;
-  text-align: center; 
-  background-color: black; 
+  text-align: center;
+  bottom: 0;
+  background-color: darkslategray;
+  
+  .imgBack {
+    width: 100%;
+    height: 500px;
+  }
 `
 export const Title = styled.h1`
-  color: white;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  color: whitesmoke;
+  text-shadow: 5px 5px 2px black;
+  padding-top: 20px;
+  padding-bottom: 20px;   
+  
 `
+
 export const MovieCard = styled.div`
 
     list-style: none;
@@ -18,8 +27,8 @@ export const MovieCard = styled.div`
     grid-template-columns: repeat( auto-fit, minmax(220px, 1fr));
     column-gap: 3rem;
     row-gap: 3rem;
-    margin-right: 30px;  
-    padding-bottom: 100px;
+    margin-right: 30px;
+    padding-top: 0%;
 
     p {
       color: brown;
@@ -40,8 +49,8 @@ export const MovieCard = styled.div`
     }
 
     img{
-    width: 180px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     border-radius: 1rem;
     margin-bottom: 1rem;
     }
