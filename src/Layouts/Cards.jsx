@@ -12,21 +12,30 @@ export function Cards(props) {
     }, []);
 
     return (
-        <div>
-            {!films ? "loading" : <>
-                {films.map((films) => {
-                    return (
-                        <MovieCard>
-                            <ul >
-                                <li>
-                                    <a href="https://www.google.com/"><img alt="Films" src={`${image_path}${films.poster_path}`}/></a>
-                                    <span>{films.title}</span>
-                                </li>
-                            </ul>
-                        </MovieCard>
-                    )
-                })};
-            </>}
+
+        <div>   
+
+            {!films ? "loading" :
+
+                <>
+
+                    {films.map((films) => {
+                        return (
+
+                            <MovieCard>
+                                <ul >
+                                    <li>
+                                        <a href="https://www.google.com/"><img alt="Films" src={`${image_path}${films.poster_path}`} /></a>
+                                        <span>{films.title}</span>
+                                    </li>
+                                </ul>
+                            </MovieCard>
+                            
+                        )
+                    })};
+
+                </>}
+                
         </div>
     );
 };

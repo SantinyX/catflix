@@ -20,6 +20,21 @@ export const Title = styled.h1`
   
 `
 
+export const CardsMovies = styled.div `
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(220px, 1fr));
+    column-gap: 3rem;
+    row-gap: 3rem;
+    margin-right: 30px;
+    padding-top: 0%;
+
+`
+
+export const testCard = styled.div `
+     display: grid;
+  
+`
+
 export const MovieCard = styled.div`
 
     list-style: none;

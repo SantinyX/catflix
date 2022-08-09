@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { catchFilms } from "../assets/Api/Api";
 import Footer from "../Layouts/Footer";
 import Header from "../Layouts/Header";
-import { Body, ContainerMovie, MovieCard, Title } from "./IndexStyle";
+import { Body, CardsMovies, MovieCard, Title } from "./IndexStyle";
 import imgHeader from "../assets/Imgs/1241167.png"
+import { Cards } from "../Layouts/Cards";
 
 function Home() {
 
     const [films, setFilms] = useState([]);
     const image_path = 'https://image.tmdb.org/t/p/w500/'
+
 
     useEffect(() => {
         catchFilms(setFilms);
@@ -21,9 +23,11 @@ function Home() {
                 <img className="imgBack" alt="Thor Love and" src={imgHeader} />
             </div>
 
-            <div>                
+            <>
 
                 <Title>Filmes Populares</Title>
+
+                
 
                 <MovieCard>
 
@@ -40,11 +44,15 @@ function Home() {
                             )
                         })}
                     </>}
+                    
+                    <MovieCard>
+                        <Cards />
+                    </MovieCard>
                 </MovieCard>
 
                 <Footer />
 
-            </div>
+            </>
 
         </Body>
     )
