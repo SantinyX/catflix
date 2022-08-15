@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { catchFilms } from "../assets/Api/Api.js"
-import { MovieCard } from "../Pages/IndexStyle.js";
-
+import { CardsContainer, MovieCard } from "./CardsStyle.js";
 
 export function Cards(props) {
     const [films, setFilms] = useState([]);
@@ -13,7 +12,7 @@ export function Cards(props) {
 
     return (
 
-        <div>   
+        <CardsContainer>
 
             {!films ? "loading" :
 
@@ -22,20 +21,21 @@ export function Cards(props) {
                     {films.map((films) => {
                         return (
 
-                            <MovieCard>
+                            <MovieCard to="/Details">
                                 <ul >
                                     <li>
-                                        <a href="https://www.google.com/"><img alt="Films" src={`${image_path}${films.poster_path}`} /></a>
+                                        <img alt="Films" src={`${image_path}${films.poster_path}`} />
+                                        <p>Média: {films.vote_average}</p>
                                         <span>{films.title}</span>
                                     </li>
                                 </ul>
                             </MovieCard>
-                            
+
                         )
                     })};
 
                 </>}
-                
-        </div>
+
+        </CardsContainer>
     );
 };

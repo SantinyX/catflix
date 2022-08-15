@@ -1,10 +1,10 @@
 
-import Router from './assets/Routes/Router';
+import RouterDom from './assets/Routes/Router';
 
 function App() {
   return (
     <div>
-      <Router/>      
+      <RouterDom/>      
     </div>
   );
 };
