@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { catchFilms } from "../assets/Api/Api";
+import React from "react";
 import Footer from "../Layouts/Footer";
 import Header from "../Layouts/Header";
 import imgHeader from "../assets/Imgs/1241167.png"
@@ -7,13 +6,7 @@ import { Body, Title } from "./IndexStyle";
 import { Cards } from "../Layouts/Cards";
 
 
-function Home() {
-
-    const [films, setFilms] = useState([]);
-
-    useEffect(() => {
-        catchFilms(setFilms);
-    }, [films]);
+export function Home() {    
 
     return (
         <Body>
@@ -25,6 +18,7 @@ function Home() {
             <Title>Filmes Populares</Title>
 
             <Cards />
+            
 
             <Footer />
 
@@ -32,4 +26,3 @@ function Home() {
     )
 };
 
-export default Home;

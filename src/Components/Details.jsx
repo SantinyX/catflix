@@ -1,20 +1,19 @@
-import { Link, Outlet } from "react-router-dom";
-import Header from "../Layouts/Header";
-
-
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
+import { goToHome } from '../Services/Redux/Slice'
+import { HeaderDetails } from './HeaderDetails';
 
 function Details() {
+
+    const dispatch = useDispatch();
+    const state = useSelector((state) => state.page.value2);
+
     return (
-        <div>
+        <div className='MainContainer'>
 
-            <Header />
+            <HeaderDetails />
 
-            <li>
-                <Link to="/">Voltar para o Home</Link>
-            </li>
-
-            <Outlet />
-
+            <Link to="/" onClick={() => dispatch(goToHome())}>Voltar para a Home</Link>
         </div>
     )
 }

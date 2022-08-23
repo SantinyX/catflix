@@ -1,32 +1,47 @@
 import { useEffect, useState } from "react";
-import { catchFilms } from "../assets/Api/Api.js"
+import { useDispatch } from "react-redux";
+import { catchDetails, catchFilms } from "../assets/Api/Api.js";
+import { getMovieDetail } from "../Services/Redux/Slice.js";
 import { CardsContainer, MovieCard } from "./CardsStyle.js";
 
-export function Cards(props) {
-    const [films, setFilms] = useState([]);
-    const image_path = 'https://image.tmdb.org/t/p/w500/'
+
+export function Cards() {
+
+    const [films, setFilms] = useState();
+    const [details, setDetails] = useState();
+    const dispatch = useDispatch();
+    const image_path = `https://image.tmdb.org/t/p/w500/`
 
     useEffect(() => {
         catchFilms(setFilms);
-    }, []);
+    }, [])
+
+    useEffect(() => {
+        dispatch(getMovieDetail(details))
+    }, [details]);
+
+    const onHoverDetails = (e) => {
+        catchDetails(e.target.id, setDetails)
+
+    }
 
     return (
 
-        <CardsContainer>
+        <CardsContainer to="/Details">
 
             {!films ? "loading" :
 
                 <>
 
-                    {films.map((films) => {
+                    {films.map((film) => {
                         return (
 
-                            <MovieCard to="/Details">
+                            <MovieCard key={film.id} id={film.id} onMouseEnter={onHoverDetails}>
                                 <ul >
                                     <li>
-                                        <img alt="Films" src={`${image_path}${films.poster_path}`} />
-                                        <p>Média: {films.vote_average}</p>
-                                        <span>{films.title}</span>
+                                        <img alt="Films" src={`${image_path}${film.poster_path}`} id={film.id} />
+                                        <p>Nota: {film.vote_average}</p>
+                                        <span>{film.title}</span>
                                     </li>
                                 </ul>
                             </MovieCard>
