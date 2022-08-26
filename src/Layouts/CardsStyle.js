@@ -9,13 +9,16 @@ column-gap: 3rem;
 row-gap: 3rem;
 margin-right: 30px;
 padding-top: 0%;
+text-decoration: none;
 `
 
-export const MovieCard = styled.div`    
+export const MovieCard = styled.div`  
+
     
     p {      
       color: brown;
       font-weight: bold;
+      text-decoration: none;
     }    
 
    li {
@@ -29,7 +32,8 @@ export const MovieCard = styled.div`
     padding: 20px;
     margin: 0px;
     width: 200px;
-    transition: all 0.3s ease-out;    
+    transition: all 0.3s ease-out;
+       
     }
 
     li:hover{        
@@ -47,6 +51,7 @@ export const MovieCard = styled.div`
     span {
         list-style: none;
         font-weight: bold;
+        
     }
     
 `

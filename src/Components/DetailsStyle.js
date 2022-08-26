@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 /*----------------HEADER DETAILS-----------------*/
 export const DetailsHeader = styled.div`
