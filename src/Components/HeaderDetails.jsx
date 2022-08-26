@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux"
 import Catflix from "../assets/Imgs/catflix.png"
 import Cat from "../assets/Imgs/cat-logo.png"
-import { DetailsHeader, ImgHeader } from "./DetailsStylde"
+import { DetailsHeader, ImgHeader, TitleDetails } from "./DetailsStyle"
+
+
 
 
 export function HeaderDetails() {
@@ -15,7 +17,10 @@ export function HeaderDetails() {
                 <img src={Catflix} alt="Catflix" />
             </ImgHeader>
 
-            <p><b>Titulo:  </b> {state.data.title} </p>
+            <TitleDetails>
+                <p><b>Titulo: </b> {state.data.title} </p>
+            </TitleDetails>
+
         </DetailsHeader>
     )
 }

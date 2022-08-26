@@ -2,7 +2,7 @@ import React from "react";
 import { FooterStyle } from "./FooterHeaderStyle";
 
 
-function Footer() {
+export function Footer() {
     return (
         <FooterStyle>
             <p>CATFLIX® 2022, All rights reserve.</p>
@@ -11,4 +11,3 @@ function Footer() {
     )
 }
 
-export default Footer;

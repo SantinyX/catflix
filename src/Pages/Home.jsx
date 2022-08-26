@@ -1,12 +1,13 @@
 import React from "react";
-import Footer from "../Layouts/Footer";
+
 import Header from "../Layouts/Header";
 import imgHeader from "../assets/Imgs/1241167.png"
 import { Body, Title } from "./IndexStyle";
 import { Cards } from "../Layouts/Cards";
+import { Footer } from "../Layouts/Footer";
 
 
-export function Home() {    
+export function Home() {
 
     return (
         <Body>
@@ -18,7 +19,7 @@ export function Home() {
             <Title>Filmes Populares</Title>
 
             <Cards />
-            
+
 
             <Footer />
 

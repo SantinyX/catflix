@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { catchDetails, catchFilms } from "../assets/Api/Api.js";
 import { getMovieDetail } from "../Services/Redux/Slice.js";
@@ -20,14 +20,15 @@ export function Cards() {
         dispatch(getMovieDetail(details))
     }, [details]);
 
-    const onHoverDetails = (e) => {
+    const onMouseHouver = (e) => {
+
         catchDetails(e.target.id, setDetails)
-
     }
-
+    
     return (
 
         <CardsContainer to="/Details">
+
 
             {!films ? "loading" :
 
@@ -36,7 +37,7 @@ export function Cards() {
                     {films.map((film) => {
                         return (
 
-                            <MovieCard key={film.id} id={film.id} onMouseEnter={onHoverDetails}>
+                            <MovieCard key={film.id} id={film.id} onMouseOver={onMouseHouver}>
                                 <ul >
                                     <li>
                                         <img alt="Films" src={`${image_path}${film.poster_path}`} id={film.id} />

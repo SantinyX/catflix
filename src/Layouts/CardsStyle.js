@@ -2,20 +2,18 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CardsContainer = styled(Link)`
-list-style: none;
+
 display: grid;
 grid-template-columns: repeat( auto-fit, minmax(220px, 1fr));
 column-gap: 3rem;
 row-gap: 3rem;
 margin-right: 30px;
 padding-top: 0%;
-
 `
 
 export const MovieCard = styled.div`    
-    list-style: none;
-    p {
-      list-style: none;
+    
+    p {      
       color: brown;
       font-weight: bold;
     }    
